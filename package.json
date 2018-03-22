@@ -1,0 +1,23 @@
+{
+  "name": "speech-to-text-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-rate-limit": "^2.11.0",
+    "express-secure-only": "^0.2.1",
+    "vcap_services": "^0.3.4",
+    "watson-developer-cloud": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
