@@ -9,7 +9,7 @@ const vcapServices = require('vcap_services');
 const cors = require('cors');
 
 // allows environment properties to be set in a file named .env
-require('dotenv').load({ silent: true });
+// require('dotenv').load({ silent: true });
 
 // on bluemix, enable rate-limiting and force https
 if (process.env.VCAP_SERVICES) {
