@@ -34,6 +34,8 @@ if (process.env.VCAP_SERVICES) {
 
 app.use(express.static(__dirname + '/static'));
 app.use(cors());
+
+app.get('/', (req, res) => {res.send('It is working!')})
 // token endpoints
 // **Warning**: these endpoints should probably be guarded with additional authentication & authorization for production use
 
@@ -47,7 +49,7 @@ var sttAuthService = new watson.AuthorizationV1(
     vcapServices.getCredentials('speech_to_text') // pulls credentials from environment in bluemix, otherwise returns {}
   )
 );
-app.use('/api/speech-to-text/token', function(req, res) {
+app.use('/npm', function(req, res) {
   sttAuthService.getToken(
     {
       url: watson.SpeechToTextV1.URL
@@ -62,6 +64,7 @@ app.use('/api/speech-to-text/token', function(req, res) {
     }
   );
 });
+
 
 const port = process.env.PORT || process.env.VCAP_APP_PORT || 3002;
 app.listen(port, function() {
